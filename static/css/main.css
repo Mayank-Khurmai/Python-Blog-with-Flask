@@ -21,9 +21,14 @@ header{
     color: white;
 }
 
+.main-div{
+    width: auto;
+}
+
 .footer{
     width: 100%;
     height: 10vh;
     margin: 0px;
     color: white !important;
 }
+
