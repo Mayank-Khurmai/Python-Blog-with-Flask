@@ -1,11 +1,20 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import json
+from flask_mail import Mail
 
 with open('templates/config.json', 'r') as c:
     parameter = json.load(c)["parameter"]
 
 app = Flask(__name__) 
+app.config.update(
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = '465',
+    MAIL_USE_SSL = True,
+    MAIL_USERNAME = '7as1827000408@gmail.com',
+    MAIL_PASSWORD=  'nptlgmmayank'
+)
+mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/blog"
 db = SQLAlchemy(app)
 
@@ -38,6 +47,11 @@ def contact():
         entry = Contact(name=name, email = email, phone = phone, message = message)
         db.session.add(entry)
         db.session.commit()
+        mail.send_message('New message from ' + name,
+                          sender=email,
+                          recipients = "mayankkhurmai8@gmail.com",
+                          body = message + "\n" + phone
+                          )
     return render_template('contact.html')
     
 app.run(debug=True)
