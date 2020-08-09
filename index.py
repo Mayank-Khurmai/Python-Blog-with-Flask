@@ -10,4 +10,4 @@ def harry():
     name = "Mayank Khurmai"
     return render_template("about.html", fname=name) 
     
-app.run()
+app.run(debug=True)
