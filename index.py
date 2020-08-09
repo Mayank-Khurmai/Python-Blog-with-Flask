@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/blog"
 db = SQLAlchemy(app)
 
-class Contacts(db.Model):
+class Contact(db.Model):
     '''sr_no	name	email	phone	message	'''
     sr_no = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
@@ -31,7 +31,7 @@ def contact():
         email = request.form.get('email')
         phone = request.form.get('phone')
         message = request.form.get('message')
-        entry = Contacts(name=name, email = email, phone = phone, message = message)
+        entry = Contact(name=name, email = email, phone = phone, message = message)
         db.session.add(entry)
         db.session.commit()
     return render_template('contact.html')
