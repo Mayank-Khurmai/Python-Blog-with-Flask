@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mayank Khurmai</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+<div class="header">
+
+<button><a href="/">Home</a></button>
+<button><a href="about">About</a></button>
+<button><a href="contact">Contact</a></button>
+
+</div>
+
+        {% block body %}
+
+        {% endblock %}
+
+<div class="footer">
+
+</div>
+    </body>
+</html>
