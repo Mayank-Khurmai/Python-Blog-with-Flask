@@ -11,12 +11,13 @@ app.config.update(
     MAIL_SERVER = 'smtp.gmail.com',
     MAIL_PORT = '465',
     MAIL_USE_SSL = True,
-    MAIL_USERNAME = '7as1827000408@gmail.com',
-    MAIL_PASSWORD=  'nptlgmmayank'
+    MAIL_USERNAME = 'test@email.com,
+    MAIL_PASSWORD=  'password'
 )
 mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/blog"
 db = SQLAlchemy(app)
+
 
 class Contact(db.Model):
     '''sr_no	name	email	phone	message	'''
@@ -25,6 +26,7 @@ class Contact(db.Model):
     email = db.Column(db.String(30), nullable=False)
     phone = db.Column(db.String(12), nullable=False)
     message = db.Column(db.String(200), nullable=True)
+
 
 @app.route("/") 
 def home(): 
@@ -53,5 +55,6 @@ def contact():
                           body = message + "\n" + phone
                           )
     return render_template('contact.html')
+    
     
 app.run(debug=True)
