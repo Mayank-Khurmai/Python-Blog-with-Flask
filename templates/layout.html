@@ -1,24 +1,53 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Mayank Khurmai</title>
-        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
-    </head>
-    <body>
-<div class="header">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<button><a href="/">Home</a></button>
-<button><a href="about">About</a></button>
-<button><a href="contact">Contact</a></button>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>Mayank's Blog</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  </head>
+  <body>
+   <body>
 
-</div>
+    <header class="m-0 mb-0 bg-dark">
+      <div class="navbar navbar-dark">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <strong>Mayank's Blog</strong>
+          </a>
+          <div>
+            <button class="p-1 mx-2 rounded px-3 border-0" type="button"><a href="/">Home</a></button>
+            <button class="p-1 mx-2 rounded px-3 border-0" type="button"><a href="about">About</a></button>
+            <button class="p-1 mx-2 rounded px-3 border-0" type="button"><a href="contact">Contact</a></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-body">
+        <div class="container">
 
         {% block body %}
 
         {% endblock %}
 
-<div class="footer">
+            </div>
+    </div>
 
-</div>
+
+        <footer class="text-muted footer bg-dark">
+            <div class="container">
+              <p class="float-right">
+                <a href="#">Back to top</a>
+              </p>
+              <p>This is Sample Blog of © Bootstrap, whose main motive is to deploy Python Flask!</p>
+              <p>New to this Blog? <a href="/">Visit the Homepage</a> or read our <a href="/about">getting started guide</a>.</p>
+            </div>
+          </footer>
     </body>
 </html>
