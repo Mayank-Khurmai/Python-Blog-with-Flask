@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import json
+
+with open('templates/config.json', 'r') as c:
+    parameter = json.load(c)["parameter"]
 
 app = Flask(__name__) 
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/blog"
@@ -15,7 +19,7 @@ class Contact(db.Model):
 
 @app.route("/") 
 def home(): 
-    return render_template("home.html")
+    return render_template("home.html", param=parameter)
 
 @app.route("/about") 
 def about(): 
