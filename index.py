@@ -40,7 +40,7 @@ def about():
 @app.route("/contact", methods = ['GET', 'POST'])
 def contact():
     if(request.method=='POST'):
-        ''' Add entry to the database'''
+        ''' Adding entry to the database'''
         ''' sr_no	name	email	phone	message	'''
         name = request.form.get('name')
         email = request.form.get('email')
