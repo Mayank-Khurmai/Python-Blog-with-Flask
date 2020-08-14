@@ -41,7 +41,7 @@ class Posts(db.Model):
 @app.route("/") 
 def home(): 
     posts = Posts.query.filter_by().all()[0:5]
-    return render_template("home.html", param=parameter)
+    return render_template('home.html', param=parameter, posts=posts)
 
 
 
@@ -77,3 +77,9 @@ def contact():
     
     
 app.run(debug=True)
+
+
+
+#
+#
+#
