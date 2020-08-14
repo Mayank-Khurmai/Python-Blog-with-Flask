@@ -51,10 +51,10 @@ def about():
     return render_template("about.html", fname=name) 
 
 
-@app.route("/post/", methods=['GET'])
+@app.route("/post/<string:post_slug>", methods=['GET'])
 def post_route(post_slug):
     post = Posts.query.filter_by(slug=post_slug).first()
-    return render_template('post.html', params=params, post=post)
+    return render_template('post.html', params=parameter, post=post)
 
 @app.route("/contact", methods = ['GET', 'POST'])
 def contact():
@@ -83,3 +83,7 @@ app.run(debug=True)
 #
 #
 #
+#
+#
+#
+# Ending of Pyhton Script 

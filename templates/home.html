@@ -3,16 +3,16 @@
 
 <h1 class="p-5">{{param['blog_title']}}</h1>
 
-{% for post in posts %}    
-          <div class="post-layout">
-                <a href="/post/{{post.slug}}">
-                    <h2> Title :-  {{ post.title }} </h2>
-                </a>
-                    <h4> Subtitle :-  {{post.tagline}} </h4>
-                <p class="post-meta">Posted by
-                <a href="#">Admin</a> on {{post.date}}</p>
-            {{post.content[0:300]}}...
-            </div>
-{% endfor %}
+    {% for post in posts %}    
+            <div class="post-layout">
+                    <a href="/post/{{post.slug}}">
+                        <h2> Title :-  {{ post.title }} </h2>
+                    </a>
+                        <h4> Subtitle :-  {{post.tagline}} </h4>
+                    <p class="post-meta">Posted by
+                    <a href="#">Admin</a> on {{post.date}}</p>
+                {{post.content[0:300]}}...
+                </div>
+    {% endfor %}
           
 {% endblock %}

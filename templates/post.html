@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="post-layout">
+        <a href="/post/{{post.slug}}">
+            <h2> Title :-  {{ post.title }} </h2>
+        </a>
+            <h4> Subtitle :-  {{post.tagline}} </h4>
+        <p class="post-meta">Posted by
+        <a href="#">Admin</a> on {{post.date}}</p>
+        {{post.content[0:300]}}...
+    </div>
+
+{% endblock %}
