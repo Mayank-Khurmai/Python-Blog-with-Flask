@@ -35,7 +35,40 @@ class Posts(db.Model):
     slug = db.Column(db.String(50), nullable=False)
     content= db.Column(db.String(500), nullable=False)
     date = db.Column(db.String(20), nullable=True)
+    
+class Contacta(db.Model):
+    '''sr_no	name	email	phone	message	'''
+    sr_no = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), nullable=False)
+    email = db.Column(db.String(30), nullable=False)
+    phone = db.Column(db.String(12), nullable=False)
+    message = db.Column(db.String(200), nullable=True)
 
+class Postsa(db.Model):
+    '''sr_no	title	tagline	  slug   content   date	'''
+    sr_no = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), nullable=False)
+    tagline = db.Column(db.String(100), nullable=False)
+    slug = db.Column(db.String(50), nullable=False)
+    content= db.Column(db.String(500), nullable=False)
+    date = db.Column(db.String(20), nullable=True)
+
+class Contactb(db.Model):
+    '''sr_no	name	email	phone	message	'''
+    sr_no = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), nullable=False)
+    email = db.Column(db.String(30), nullable=False)
+    phone = db.Column(db.String(12), nullable=False)
+    message = db.Column(db.String(200), nullable=True)
+
+class Postsb(db.Model):
+    '''sr_no	title	tagline	  slug   content   date	'''
+    sr_no = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), nullable=False)
+    tagline = db.Column(db.String(100), nullable=False)
+    slug = db.Column(db.String(50), nullable=False)
+    content= db.Column(db.String(500), nullable=False)
+    date = db.Column(db.String(20), nullable=True)
 
 
 @app.route("/") 
