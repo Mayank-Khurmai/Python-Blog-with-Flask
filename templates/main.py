@@ -35,7 +35,7 @@ class Posts(db.Model):
     slug = db.Column(db.String(50), nullable=False)
     content= db.Column(db.String(500), nullable=False)
     date = db.Column(db.String(20), nullable=True)
-    
+
 class Contacta(db.Model):
     '''sr_no	name	email	phone	message	'''
     sr_no = db.Column(db.Integer, primary_key=True)
@@ -85,6 +85,17 @@ def about():
 
 
 @app.route("/post/<string:post_slug>", methods=['GET'])
+def post_route(post_slug):
+    post = Posts.query.filter_by(slug=post_slug).first()
+    return render_template('post.html', params=parameter, post=post)
+
+@app.route("/about-us") 
+def about(): 
+    name = "Mayank Khurmai"
+    return render_template("about.html", fname=name) 
+
+
+@app.route("/posts/<string:post_slug>", methods=['GET'])
 def post_route(post_slug):
     post = Posts.query.filter_by(slug=post_slug).first()
     return render_template('post.html', params=parameter, post=post)
