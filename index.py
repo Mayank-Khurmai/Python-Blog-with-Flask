@@ -27,15 +27,34 @@ class Contact(db.Model):
     phone = db.Column(db.String(12), nullable=False)
     message = db.Column(db.String(200), nullable=True)
 
+class Posts(db.Model):
+     '''sr_no	title	tagline	  slug   content   date	'''
+    sr_no = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), nullable=False)
+    tagline = db.Column(db.String(100), nullable=False)
+    slug = db.Column(db.String(50), nullable=False)
+    content= db.Column(db.String(500), nullable=False)
+    date = db.Column(db.String(20), nullable=True)
+
+
 
 @app.route("/") 
 def home(): 
     return render_template("home.html", param=parameter)
 
+
+
 @app.route("/about") 
 def about(): 
     name = "Mayank Khurmai"
     return render_template("about.html", fname=name) 
+
+
+@app.route("/post/", methods=['GET'])
+def post_route(post_slug):
+    post = Posts.query.filter_by(slug=post_slug).first()
+    return render_template('post.html', params=params, post=post)
+
 
 @app.route("/contact", methods = ['GET', 'POST'])
 def contact():
