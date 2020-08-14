@@ -7,13 +7,13 @@ with open('templates/config.json', 'r') as c:
     parameter = json.load(c)["parameter"]
 
 app = Flask(__name__) 
-app.config.update(
-    MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = '465',
-    MAIL_USE_SSL = True,
-    MAIL_USERNAME = 'test@email.com,
-    MAIL_PASSWORD=  'password'
-)
+# app.config.update(
+#     MAIL_SERVER = 'smtp.gmail.com',
+#     MAIL_PORT = '465',
+#     MAIL_USE_SSL = True,
+#     MAIL_USERNAME = 'test@email.com,
+#     MAIL_PASSWORD=  'password'
+# )
 mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/blog"
 db = SQLAlchemy(app)
