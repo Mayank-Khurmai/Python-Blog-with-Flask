@@ -3,4 +3,27 @@
 
 <h1 class="p-5">{{param['blog_title']}}</h1>
 
+<h1><u>Blog Posts</u></h1>
+
+
+{% for post in posts %}    
+          <div class="post-preview">
+            <a href="/post/{{post.slug}}">
+              <h2 class="post-title">{{ post.title }}
+
+              </h2>
+              <h3 class="post-subtitle">
+                {{post.tagline}}
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">Admin</a>
+              on {{post.date}}</p>
+          </div>
+
+          {{post.content[0:143]}}...
+          <hr>
+</li></a>
+          {% endfor %}
+          
 {% endblock %}
