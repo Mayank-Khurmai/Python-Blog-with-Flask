@@ -20,7 +20,7 @@ db = SQLAlchemy(app)
 
 
 class Contact(db.Model):
-    '''sr_no	name	email	phone	message	'''
+    '''sr_no	name	 email	 phone	 message	'''
     sr_no = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
     email = db.Column(db.String(30), nullable=False)
