@@ -28,7 +28,7 @@ class Contact(db.Model):
     message = db.Column(db.String(200), nullable=True)
 
 class Posts(db.Model):
-    '''sr_no	title	tagline	  slug   content   date	'''
+    '''sr_no	 title	 tagline	  slug   content   date	'''
     sr_no = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), nullable=False)
     tagline = db.Column(db.String(100), nullable=False)
