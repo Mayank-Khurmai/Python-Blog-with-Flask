@@ -14,6 +14,7 @@ app = Flask(__name__)
 #     MAIL_USERNAME = 'test@email.com,
 #     MAIL_PASSWORD=  'password'
 # )
+
 mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/blog"
 db = SQLAlchemy(app)
