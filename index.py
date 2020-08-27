@@ -12,7 +12,7 @@ app = Flask(__name__)
 #     MAIL_PORT = '465',
 #     MAIL_USE_SSL = True,
 #     MAIL_USERNAME = 'test@email.com,
-#     MAIL_PASSWORD=  'password'
+#     MAIL_PASSWORD=  'mail_password'
 # )
 
 mail = Mail(app)
