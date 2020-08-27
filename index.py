@@ -15,6 +15,8 @@ app = Flask(__name__)
 #     MAIL_PASSWORD=  'mail_password'
 # )
 
+# SQLALCHEML is an ORM 
+
 mail = Mail(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/blog"
 db = SQLAlchemy(app)
